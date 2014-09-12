@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="jar" name="EPointsSC:jar">
-    <output-path>$USER_HOME$/Desktop</output-path>
+    <output-path>$USER_HOME$/Desktop/Build Server/Minecraft/plugins</output-path>
     <root id="archive" name="EPointsSC.jar">
       <element id="module-output" name="EPointsSC" />
       <element id="file-copy" path="$PROJECT_DIR$/src/me/chr1s0143/EPointsSC/plugin.yml" />

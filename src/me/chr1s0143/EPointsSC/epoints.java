@@ -28,7 +28,7 @@ public class epoints extends JavaPlugin {
                 Player player = (Player) sender;
                 if (player.hasPermission("epoints.use"))
                     if (args.length == 0)
-                        player.sendMessage(ChatColor.RED + "Try doing " + ChatColor.GOLD + "/epoints {player name}");
+                        player.sendMessage(ChatColor.GREEN + player.getName() +"," + " try doing " + ChatColor.GOLD + "/epoints {player name}");
                     else if (args.length == 1) {
                         getServer().dispatchCommand(getServer().getConsoleSender(), "enjin addpoints " + args[0] + " 2");
 
