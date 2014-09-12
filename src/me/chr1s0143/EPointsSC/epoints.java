@@ -15,6 +15,8 @@ public class epoints extends JavaPlugin {
     public void onEnable() {
         PluginDescriptionFile pluginFile = getDescription();
         getLogger().info(pluginFile.getName() + " is now enabled!.");
+        getConfig().options().copyDefaults(true);
+        saveConfig();
     }
 
     public void onDisable() {
@@ -28,9 +30,9 @@ public class epoints extends JavaPlugin {
                 Player player = (Player) sender;
                 if (player.hasPermission("epoints.use"))
                     if (args.length == 0)
-                        player.sendMessage(ChatColor.GREEN + player.getName() +"," + " try doing " + ChatColor.GOLD + "/epoints {player name}");
+                        player.sendMessage(ChatColor.GREEN + player.getName() +", try doing " + ChatColor.GOLD + "/epoints {player name}");
                     else if (args.length == 1) {
-                        getServer().dispatchCommand(getServer().getConsoleSender(), "enjin addpoints " + args[0] + " 2");
+                        getServer().dispatchCommand(getServer().getConsoleSender(), "enjin addpoints " + args[0] + " " + getConfig().getInt("Points"));
 
                         player.sendMessage(ChatColor.GOLD + "2 Points Added to " + ChatColor.GREEN + args[0] + "'s" + ChatColor.GOLD + " Enjin Account!");
 
@@ -38,7 +40,7 @@ public class epoints extends JavaPlugin {
                     }
             }
         }
-        return false;
+        return true;
 
     }
 }
