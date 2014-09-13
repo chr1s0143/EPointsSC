@@ -23,9 +23,9 @@ public class epoints extends JavaPlugin {
         if (sender instanceof Player) {
             Player player = (Player) sender;
             if (commandLabel.equalsIgnoreCase("epreload")) {
-                if (player.hasPermission("epoints.reload")) ;
+                if (player.hasPermission("epoints.reload"))
                     reloadConfig();
-                        player.sendMessage(ChatColor.DARK_GREEN + "Config Has Been Reloaded!");
+                player.sendMessage(ChatColor.DARK_GREEN + "Config has been reloaded!");
             }
             if (commandLabel.equalsIgnoreCase("epoints")) {
                 if (player.hasPermission("epoints.use"))
