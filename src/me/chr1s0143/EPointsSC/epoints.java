@@ -9,7 +9,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import java.io.File;
 /**
  * Created by chris on 11/09/2014.
  */
