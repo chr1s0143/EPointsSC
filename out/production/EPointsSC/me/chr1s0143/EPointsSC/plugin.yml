@@ -7,6 +7,8 @@ description: Simple plugin for non-ops to credit winners of games in spleef/park
 commands:
   epoints:
     usage: epoints (playername)
+  epreload:
+    usage: reloads EPointsSC
 
 permissions:
   epoints.use:
