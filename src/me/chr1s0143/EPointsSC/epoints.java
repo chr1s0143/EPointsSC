@@ -19,25 +19,25 @@ public class epoints extends JavaPlugin {
         saveDefaultConfig();
     }
 
-    public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+    public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
         if (sender instanceof Player) {
-            if (cmd.getName().equalsIgnoreCase("epreload"))
-                reloadConfig();
-            sender.sendMessage(ChatColor.GREEN + "EPoints Config Reloaded!");
-            if (cmd.getName().equalsIgnoreCase("epoints")) {
-                Player player = (Player) sender;
+            Player player = (Player) sender;
+            if (commandLabel.equalsIgnoreCase("epreload")) {
+                if (player.hasPermission("epoints.reload")) ;
+                    reloadConfig();
+                        player.sendMessage(ChatColor.DARK_GREEN + "Config Has Been Reloaded!");
+            }
+            if (commandLabel.equalsIgnoreCase("epoints")) {
                 if (player.hasPermission("epoints.use"))
                     if (args.length == 0)
-                        player.sendMessage(ChatColor.GREEN + player.getName() +", try doing " + ChatColor.GOLD + "/epoints {player name}");
+                        player.sendMessage(ChatColor.DARK_GREEN + player.getName() + ", try doing " + ChatColor.GOLD + "/epoints {player name}");
                     else if (args.length == 1) {
                         getServer().dispatchCommand(getServer().getConsoleSender(), "enjin addpoints " + args[0] + " " + getConfig().getInt("Points"));
 
                         player.sendMessage(ChatColor.GOLD + " " + getConfig().getInt("Points") + " Points Added to " + ChatColor.GREEN + args[0] + "'s" + ChatColor.GOLD + " Enjin Account!");
-
                     }
             }
         }
         return true;
-
     }
 }
