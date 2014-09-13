@@ -4,6 +4,7 @@
     <root id="archive" name="EPointsSC.jar">
       <element id="module-output" name="EPointsSC" />
       <element id="file-copy" path="$PROJECT_DIR$/src/me/chr1s0143/EPointsSC/plugin.yml" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/me/chr1s0143/EPointsSC/config.yml" />
     </root>
   </artifact>
 </component>

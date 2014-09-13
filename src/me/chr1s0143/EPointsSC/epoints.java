@@ -13,10 +13,10 @@ import org.bukkit.entity.Player;
 public class epoints extends JavaPlugin {
 
     public void onEnable() {
+        getConfig().options().copyDefaults(true);
+        saveDefaultConfig();
         PluginDescriptionFile pluginFile = getDescription();
         getLogger().info(pluginFile.getName() + " is now enabled!.");
-        getConfig().options().copyDefaults(true);
-        saveConfig();
     }
 
     public void onDisable() {
