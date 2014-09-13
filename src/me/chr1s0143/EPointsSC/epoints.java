@@ -15,13 +15,6 @@ public class epoints extends JavaPlugin {
     public void onEnable() {
         getConfig().options().copyDefaults(true);
         saveDefaultConfig();
-        PluginDescriptionFile pluginFile = getDescription();
-        getLogger().info(pluginFile.getName() + " is now enabled!.");
-    }
-
-    public void onDisable() {
-        PluginDescriptionFile pluginFile = getDescription();
-        getLogger().info(pluginFile.getName() + " is now disabled.");
     }
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
