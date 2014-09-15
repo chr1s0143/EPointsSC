@@ -13,5 +13,5 @@ commands:
     description: reload the config
 
 permissions:
-    epoints.*:
-        description: Access to all EPointsSC commands
+    epoints.use:
+        description: Access to /epoints (name)
