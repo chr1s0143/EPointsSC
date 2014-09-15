@@ -27,7 +27,7 @@ public class epoints extends JavaPlugin {
                     reloadConfig();
                 player.sendMessage(ChatColor.DARK_GREEN + "Config has been reloaded!");
             }
-            if (commandLabel.equalsIgnoreCase("epoints")) {
+           else if (commandLabel.equalsIgnoreCase("epoints")) {
                 if (player.hasPermission("epoints.use"))
                     if (args.length == 0)
                         player.sendMessage(ChatColor.DARK_GREEN + player.getName() + ", try doing " + ChatColor.GOLD + "/epoints {player name}");
