@@ -24,11 +24,14 @@ public class epoints extends JavaPlugin {
         if (sender instanceof Player) {
             Player player = (Player) sender;
             if (commandLabel.equalsIgnoreCase("epreload")) {
-                if (player.hasPermission("epoints.reload"))
+                if (player.hasPermission("epoints.reload")) {
+                    reloadConfig();
                     player.sendMessage(ChatColor.DARK_GREEN + "Config File Has Been Reloaded!");
-                else player.sendMessage(ChatColor.DARK_RED + "You do not have permission to use this command!");
-                reloadConfig();
                 }
+                else {
+                    player.sendMessage(ChatColor.DARK_RED + "You do not have permission to use this command!");
+                }
+            }
             else if (commandLabel.equalsIgnoreCase("epoints")) {
                 if (player.hasPermission("epoints.use"))
                     if (args.length == 0)
