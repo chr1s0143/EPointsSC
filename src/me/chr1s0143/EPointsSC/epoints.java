@@ -33,7 +33,7 @@ public class epoints extends JavaPlugin {
                 }
             }
             else if (commandLabel.equalsIgnoreCase("epoints")) {
-                if (player.hasPermission("epoints.use"))
+                if (player.hasPermission("epoints.use")) {
                     if (args.length == 0)
                         player.sendMessage(ChatColor.DARK_GREEN + player.getName() + ", try doing " + ChatColor.GOLD + "/epoints {player name}");
                     else if (args.length == 1) {
@@ -41,6 +41,9 @@ public class epoints extends JavaPlugin {
 
                         player.sendMessage(ChatColor.GOLD + " " + getConfig().getInt("Points") + " Points Added to " + ChatColor.GREEN + args[0] + "'s" + ChatColor.GOLD + " Enjin Account!");
                     }
+                } else {
+                    player.sendMessage(ChatColor.DARK_RED + "You do not have permission to use this command!");
+                }
             }
         }
         return true;
