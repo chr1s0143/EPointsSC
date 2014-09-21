@@ -23,7 +23,7 @@ public class epoints extends JavaPlugin {
     public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
         if (sender instanceof Player) {
             Player player = (Player) sender;
-            if (commandLabel.equalsIgnoreCase("epreload")) {
+            if (cmd.getName().equalsIgnoreCase("epreload")) {
                 if (player.hasPermission("epoints.reload")) {
                     reloadConfig();
                     player.sendMessage(ChatColor.DARK_GREEN + "Config File Has Been Reloaded!");
@@ -32,7 +32,7 @@ public class epoints extends JavaPlugin {
                     player.sendMessage(ChatColor.DARK_RED + "You do not have permission to use this command!");
                 }
             }
-            else if (commandLabel.equalsIgnoreCase("epoints")) {
+            else if (cmd.getName().equalsIgnoreCase("epoints")) {
                 if (player.hasPermission("epoints.use")) {
                     if (args.length == 0)
                         player.sendMessage(ChatColor.DARK_GREEN + player.getName() + ", try doing " + ChatColor.GOLD + "/epoints {player name}");

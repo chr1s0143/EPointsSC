@@ -8,9 +8,11 @@ commands:
   epoints:
     usage: /epoints
     description: /epoints (player name) - Credit the player with points set in the config.yml (Default 2)
+    aliases: [ep,eps]
   epreload:
     usage: /epreload
     description: reload the config
+    aliases: [epr]
 
 permissions:
     epoints.use:
