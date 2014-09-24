@@ -27,12 +27,10 @@ public class epoints extends JavaPlugin {
                 if (player.hasPermission("epoints.reload")) {
                     reloadConfig();
                     player.sendMessage(ChatColor.DARK_GREEN + "Config File Has Been Reloaded!");
-                }
-                else {
+                } else {
                     player.sendMessage(ChatColor.DARK_RED + "You do not have permission to use this command!");
                 }
-            }
-            else if (cmd.getName().equalsIgnoreCase("epoints")) {
+            } else if (cmd.getName().equalsIgnoreCase("epoints")) {
                 if (player.hasPermission("epoints.use")) {
                     if (args.length == 0)
                         player.sendMessage(ChatColor.DARK_GREEN + player.getName() + ", try doing " + ChatColor.GOLD + "/epoints {player name}");
@@ -41,11 +39,29 @@ public class epoints extends JavaPlugin {
                             Player targetPlayer = player.getServer().getPlayer(args[0]);
                             getServer().dispatchCommand(getServer().getConsoleSender(), "enjin addpoints " + args[0] + " " + getConfig().getInt("Points"));
 
-                            player.sendMessage(ChatColor.GOLD + " " + getConfig().getInt("Points") + " Points Added to " + ChatColor.GREEN + args[0] + "'s" + ChatColor.GOLD + " Enjin Account!"); }
-                        else player.sendMessage(ChatColor.GOLD + "Player " + ChatColor.DARK_GREEN + args[0] + ChatColor.GOLD + " is not currently online. Please wait until they are online before using this command!" );
+                            player.sendMessage(ChatColor.GOLD + " " + getConfig().getInt("Points") + " points added to " + ChatColor.GREEN + args[0] + "'s" + ChatColor.GOLD + " Enjin account!");
+                        } else
+                            player.sendMessage(ChatColor.GOLD + "Player " + ChatColor.DARK_GREEN + args[0] + ChatColor.GOLD + " is not currently online. Please wait until they are online before using this command!");
                     }
                 } else {
                     player.sendMessage(ChatColor.DARK_RED + "You do not have permission to use this command!");
+                }
+            } else if (cmd.getName().equalsIgnoreCase("epointso")) {
+                if (player.hasPermission("epoints.override")) {
+                    if (args.length == 0)
+                        player.sendMessage(ChatColor.DARK_GREEN + player.getName() + ", try doing " + ChatColor.GOLD + "/epointso {playername} {points}");
+                    else if (args.length == 1)
+                        player.sendMessage(ChatColor.DARK_GREEN + player.getName() + ", try doing " + ChatColor.GOLD + "/epointso {playername} {points}");
+                    else if (args.length == 2) {
+                        if (player.getServer().getPlayer(args[0]) != null) {
+                            Player targetPlayer = player.getServer().getPlayer(args[0]);
+                            getServer().dispatchCommand(getServer().getConsoleSender(), "enjin addpoints " + args[0] + " " + args[1]);
+                            player.sendMessage(ChatColor.GOLD + args[1] + " points added to " + ChatColor.GREEN + args[0] + "'s" + ChatColor.GOLD + "Enjin account!");
+                        } else
+                            player.sendMessage(ChatColor.GOLD + "Player " + ChatColor.DARK_GREEN + args[0] + ChatColor.GOLD + " is not currently online. Please wait until they are online before using this command!");
+                    } else {
+                        player.sendMessage(ChatColor.DARK_RED + "You do not have permission to use this command!");
+                    }
                 }
             }
         }
